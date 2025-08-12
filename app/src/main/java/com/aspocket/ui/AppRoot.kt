@@ -1,18 +1,26 @@
 package com.aspocket.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Update
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.aspocket.ui.screens.AstucesScreen
+import com.aspocket.ui.screens.FicheDetailScreen
+import com.aspocket.ui.screens.FichesScreen
+import com.aspocket.ui.screens.MajScreen
+import com.aspocket.ui.screens.ReferentielScreen
 
 sealed class Dest(val route: String, val label: String, val icon: ImageVector) {
     object Referentiel: Dest("referentiel", "Référentiel", Icons.Filled.Book)
@@ -26,9 +34,8 @@ sealed class Dest(val route: String, val label: String, val icon: ImageVector) {
 fun AppRoot() {
     val nav = rememberNavController()
     val items = listOf(Dest.Referentiel, Dest.Fiches, Dest.Astuces, Dest.Maj)
-    val nav = rememberNavController()
-    CompositionLocalProvider(LocalNavController provides nav) {
-        Scaffold(
+
+    Scaffold(
         bottomBar = {
             NavigationBar {
                 val backStackEntry by nav.currentBackStackEntryAsState()
@@ -36,7 +43,13 @@ fun AppRoot() {
                 items.forEach { dest ->
                     NavigationBarItem(
                         selected = currentRoute == dest.route,
-                        onClick = { nav.navigate(dest.route) { popUpTo(nav.graph.startDestinationId) { saveState=true }; launchSingleTop=true; restoreState=true } },
+                        onClick = {
+                            nav.navigate(dest.route) {
+                                popUpTo(nav.graph.startDestinationId) { saveState = true }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        },
                         icon = { Icon(dest.icon, contentDescription = dest.label) },
                         label = { Text(dest.label) }
                     )
@@ -44,16 +57,19 @@ fun AppRoot() {
             }
         }
     ) { padding ->
-        NavHost(nav, startDestination = Dest.Fiches.route, modifier = Modifier.fillMaxSize().padding(padding)) {
-            composable(Dest.Referentiel.route) { com.aspocket.ui.screens.ReferentielScreen() }
-            composable(Dest.Fiches.route) { com.aspocket.ui.screens.FichesScreen() }
+        NavHost(
+            navController = nav,
+            startDestination = Dest.Fiches.route,
+            modifier = Modifier.fillMaxSize().padding(padding)
+        ) {
+            composable(Dest.Referentiel.route) { ReferentielScreen() }
+            composable(Dest.Fiches.route) { FichesScreen(nav) }
             composable("fiche/{id}") { backStack ->
                 val id = backStack.arguments?.getString("id") ?: ""
-                com.aspocket.ui.screens.FicheDetailScreen(id)
+                FicheDetailScreen(id)
             }
-            composable(Dest.Astuces.route) { com.aspocket.ui.screens.AstucesScreen() }
-            composable(Dest.Maj.route) { com.aspocket.ui.screens.MajScreen() }
+            composable(Dest.Astuces.route) { AstucesScreen() }
+            composable(Dest.Maj.route) { MajScreen() }
         }
     }
 }
-    }
