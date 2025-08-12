@@ -2,16 +2,36 @@ name: Android CI
 on:
   push: { branches: [ main ] }
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
+
       - uses: gradle/actions/setup-gradle@v3
         with: { gradle-version: 8.7 }
-      - name: Build Debug APK
-        run: gradle :app:assembleDebug --no-daemon --stacktrace --info
-      - uses: actions/upload-artifact@v4
-        with: { name: ASPocket-debug-apk, path: app/build/outputs/apk/debug/*.apk }
+
+      # --- Build + capture log complet ---
+      - name: Build Debug APK (log capturé)
+        run: |
+          set -o pipefail
+          gradle :app:assembleDebug --no-daemon --stacktrace --info 2>&1 | tee build.log
+
+      # APK et log en artefacts
+      - name: Upload APK artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ASPocket-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-build-log
+          path: build.log
