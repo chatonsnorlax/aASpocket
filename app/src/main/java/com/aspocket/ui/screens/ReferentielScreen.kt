@@ -9,6 +9,14 @@ package com.aspocket.ui.screens
     import androidx.compose.ui.unit.dp
     import androidx.compose.ui.platform.LocalUriHandler
 
+private val referentielSections = listOf(
+    "Traçabilité (dossier de soins)",
+    "Hygiène",
+    "EPI",
+    "Auxiliaire"
+)
+
+
     @Composable
     fun ReferentielScreen() {
         val uri = LocalUriHandler.current
