@@ -1,0 +1,110 @@
+[
+  {
+    "id": "protections_pullup",
+    "category": "Protections",
+    "title": "Pull-up (culotte absorbante)",
+    "summary": "Repères visuels : gouttes = absorption, traits = taille. Pour patients mobiles avec fuites modérées.",
+    "content": "Indications: mobilité préservée, autonomie partielle. Mise en place: enfiler comme un sous-vêtement, vérifier ajustement aux cuisses, absence de plis. Repères: nombre de gouttes = capacité d'absorption; traits/barres sur la ceinture = taille (XS à XL). Couleurs: indicatives selon les fabricants.",
+    "tips": [
+      "Choisir la taille selon le tour de taille/hanche.",
+      "Changer dès que l'indicateur d'humidité est saturé.",
+      "Éviter les crèmes épaisses sur la zone d'adhérence."
+    ]
+  },
+  {
+    "id": "protections_change_complet",
+    "category": "Protections",
+    "title": "Change complet",
+    "summary": "Pour fuites abondantes ou alitement. Pose en sécurité, centrage et étanchéité cuisses.",
+    "content": "Indications: alitement, incontinence sévère. Technique: tourner sur le côté, positionner l'arrière, ramener l'avant, ajuster attaches sans comprimer. Vérifier étanchéité aux plis inguinaux. Éviter trop serré (risque lésions) ou trop lâche (fuites).",
+    "tips": [
+      "Préparer tout le matériel avant.",
+      "Plier la protection en gouttière avant pose.",
+      "Contrôler l'indicateur d'humidité et l'odeur."
+    ]
+  },
+  {
+    "id": "protections_alese",
+    "category": "Protections",
+    "title": "Alèse",
+    "summary": "Protection de lit/fauteuil en complément, pas un dispositif principal.",
+    "content": "Usage: protection de surface (lit, fauteuil), en complément d'une protection portée. Ne remplace pas une protection adaptée. Changer si souillée; éviter l'effet macération.",
+    "tips": [
+      "Positionner sans plis.",
+      "Ne pas superposer plusieurs alèses.",
+      "Utiliser des versions réutilisables si disponible."
+    ]
+  },
+  {
+    "id": "toilette_lavabo",
+    "category": "Toilettes",
+    "title": "Toilette au lavabo",
+    "summary": "Matériel, EPI, étapes du haut vers le bas en respectant l'intimité.",
+    "content": "Matériel: gants (selon protocole), linge propre, solution lavante, sac déchets. EPI: gants systématiques; tablier si risque de projections. Étapes: installer confortablement, expliquer, zones propres vers zones sales, séchage minutieux, hydratation si besoin. S'adapter aux protocoles locaux (ex: 2 gants/2 serviettes).",
+    "tips": [
+      "Préserver l'autonomie (laisser faire ce qui est possible).",
+      "Changer l'eau si trouble.",
+      "Traçabilité: noter la réalisation et les observations."
+    ]
+  },
+  {
+    "id": "toilette_lit",
+    "category": "Toilettes",
+    "title": "Toilette au lit",
+    "summary": "Sécurité, confort, prévention des escarres, respect de l'intimité.",
+    "content": "Sécurité: freins, barrières si nécessaire, intimité. Étapes: segmenter le soin, tourner délicatement, protéger le lit, sécher les plis cutanés. Prévenir les escarres: inspection zones à risque, hydratation cutanée adaptée.",
+    "tips": [
+      "Préparer tout en amont pour limiter les manipulations.",
+      "Vérifier la température de l'eau.",
+      "Surveiller douleur et fatigue."
+    ]
+  },
+  {
+    "id": "hygiene_mains",
+    "category": "Hygiène",
+    "title": "Hygiène des mains (FHA)",
+    "summary": "6 étapes, 30 secondes. Quand ? Avant/après contact patient, après retrait des gants, etc.",
+    "content": "Friction hydro-alcoolique: paume contre paume; dos des mains; entre les doigts; dos des doigts; pouces; bouts des doigts/ongles. Durée ~30s jusqu'à mains sèches. Moments clés: avant contact patient, avant geste aseptique, après risque d'exposition aux liquides biologiques, après contact patient, après contact environnement patient.",
+    "tips": [
+      "Retirer bagues et montre.",
+      "Ongles courts, sans vernis.",
+      "Hydrater les mains hors soins pour éviter gerçures."
+    ]
+  },
+  {
+    "id": "epi_quand",
+    "category": "Hygiène",
+    "title": "EPI : quand mettre quoi ?",
+    "summary": "Gants, tablier, masque selon risque. Adapter au contexte et au protocole local.",
+    "content": "Gants: contact sang/liquides biologiques, muqueuses, peau lésée. Tablier: risque de projections/souillures. Masque: symptômes respiratoires ou précautions complémentaires. Retrait: éviter auto-contamination, hygiène des mains après retrait.",
+    "tips": [
+      "Changer de gants entre deux patients/gestes.",
+      "Ne pas frotter le masque.",
+      "Tablier à usage unique si souillé."
+    ]
+  },
+  {
+    "id": "tri_situations",
+    "category": "Protections",
+    "title": "Choisir le bon dispositif (tri rapide)",
+    "summary": "Guide express: pull-up vs change complet vs change anatomique vs alèse.",
+    "content": "Pull-up: mobilité conservée, fuites modérées. Change complet: alité, fuites abondantes. Anatomique: avec slip filet pour incontinence modérée. Alèse: protection surface, complément. Toujours évaluer confort, taille et capacité.",
+    "tips": [
+      "Réévaluer régulièrement le dispositif choisi.",
+      "Écouter le ressenti de la personne.",
+      "Vérifier la tolérance cutanée."
+    ]
+  },
+  {
+    "id": "checklist_toilette",
+    "category": "Toilettes",
+    "title": "Checklist Avant/Pendant/Après (toilette & change)",
+    "summary": "3 listes pour ne rien oublier et tracer.",
+    "content": "Avant: vérifier matériel, EPI, consentement, confort. Pendant: respect intimité, du haut vers le bas, gestes doux, surveillance cutanée. Après: confort, élimination déchets, hygiène des mains, traçabilité (soin, peau, douleur).",
+    "tips": [
+      "Toujours demander l'accord et expliquer chaque geste.",
+      "Adapter au protocole local.",
+      "Signaler toute lésion ou douleur inhabituelle."
+    ]
+  }
+]
